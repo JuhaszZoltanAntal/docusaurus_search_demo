@@ -27,9 +27,11 @@ class _SearchDialogState extends State<SearchDialog> {
       autofocus: false,
       focusNode: keyboardFocusNode,
       onKey: (event) {
-        if (event is RawKeyDownEvent) {
-          if (event.isKeyPressed(LogicalKeyboardKey.escape)) {
-            Navigator.of(context, rootNavigator: true).pop();
+        if (mounted) {
+          if (event is RawKeyDownEvent) {
+            if (event.isKeyPressed(LogicalKeyboardKey.escape)) {
+              Navigator.of(context, rootNavigator: true).maybePop();
+            }
           }
         }
       },

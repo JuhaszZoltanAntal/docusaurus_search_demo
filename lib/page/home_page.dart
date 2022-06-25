@@ -38,7 +38,7 @@ class _HomePageState extends State<HomePage> {
                 alreadyOpened = true;
               });
             } else {
-              Navigator.of(context, rootNavigator: true).pop();
+              Navigator.of(context, rootNavigator: true).maybePop(context);
               setState(() {
                 alreadyOpened = false;
               });
